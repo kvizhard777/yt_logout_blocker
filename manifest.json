@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Logout Blocker",
+  "version": "1.0",
+  "description": "Blocks access to YouTube logout page and disables the logout button.",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess",
+    "activeTab",
+    "tabs"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
